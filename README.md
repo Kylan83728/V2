@@ -230,7 +230,7 @@ local Toggle = FarmTab:CreateToggle({
  local Section = FarmTab:CreateSection("Auto Coin")
 
  local isHitting = false
- local Toggle = Tab:CreateToggle({
+ local Toggle = FarmTab:CreateToggle({
     Name = "Toggle Example",
     CurrentValue = false,
     Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
