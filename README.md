@@ -179,7 +179,7 @@ local Toggle = FarmTab:CreateToggle({
     end,
  })
 
- 
+
  local Section = FarmTab:CreateSection("Kill Bosses")
 
 
@@ -222,6 +222,31 @@ local Toggle = FarmTab:CreateToggle({
             game:GetService("ReplicatedStorage"):WaitForChild("jdskhfsIIIllliiIIIdchgdIiIIIlIlIli"):FireServer(unpack(args))
             wait()
             end
+    -- The function that takes place when the toggle is pressed
+    -- The variable (Value) is a boolean on whether the toggle is true or false
+    end,
+ })
+
+ local Section = FarmTab:CreateSection("Auto Coin")
+
+ local isHitting = false
+ local Toggle = Tab:CreateToggle({
+    Name = "Toggle Example",
+    CurrentValue = false,
+    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+        isHitting = Value
+
+        if isHitting then
+            -- Lancer une boucle non bloquante
+            task.spawn(function()
+                while isHitting do
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("CoinEvent"):FireServer()
+task.wait(0.1) -- Pause
+wait()
+end
+end)
+        end
     -- The function that takes place when the toggle is pressed
     -- The variable (Value) is a boolean on whether the toggle is true or false
     end,
