@@ -179,9 +179,11 @@ local Toggle = FarmTab:CreateToggle({
     end,
  })
 
+ 
  local Section = FarmTab:CreateSection("Kill Bosses")
 
 
+ local isHitting = false
  local Toggle = FarmTab:CreateToggle({
     Name = "Kill All Bosses",
     CurrentValue = false,
