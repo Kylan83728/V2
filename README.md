@@ -51,7 +51,7 @@ loadstring(game:HttpGet(('https://raw.githubusercontent.com/RTrade/Voidz/main/An
 
 
 local Button = FarmTab:CreateButton({
-   Name = "Anti Afk mobile",
+   Name = "Anti Afk (mobile)",
    Callback = function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/Proxylol/OtherScripts/main/AntiAfk.lua'),true))()
    -- The function that takes place when the button is pressed
