@@ -189,23 +189,6 @@ end
             end)
         end
 local args = {
-    [1] = Vector3.new(-126.91341400146484, 646.3195190429688, 594.6644287109375),
-    [2] = "NewLightningball"
-}
-
- isHitting = Value
-
-        if isHitting then
-            -- Lancer une boucle non bloquante
-            task.spawn(function()
-                while isHitting do
-
-game:GetService("ReplicatedStorage").SkillsInRS.RemoteEvent:FireServer(unpack(args))
-task.wait(0.1) -- Pause
-end
-            end)
-        end
-        local args = {
     [1] = Vector3.new(-80.19454193115234, 595.6495361328125, 813.2150268554688),
     [2] = "NewLightningball"
 }
