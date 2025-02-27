@@ -136,6 +136,7 @@ local Toggle = FarmTab:CreateToggle({
    CurrentValue = false,
    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-81.58647155761719, 594.46826171875, 814.044189453125)
 local args = {
     [1] = workspace.MAP:FindFirstChild("5k_dummies").Dummy2.Humanoid,
     [2] = 4
@@ -153,39 +154,27 @@ task.wait(0.1) -- Pause
 end
             end)
         end
+local args = {
+    [1] = Vector3.new(-83.04418182373047, 595.0643920898438, 813.4301147460938),
+    [2] = "NewFireball"
+}
+
+ isHitting = Value
+
+        if isHitting then
+            -- Lancer une boucle non bloquante
+            task.spawn(function()
+                while isHitting do
+
+game:GetService("ReplicatedStorage").SkillsInRS.RemoteEvent:FireServer(unpack(args))
+task.wait(0.1) -- Pause
+end
+            end)
+        end
    -- The function that takes place when the toggle is pressed
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
-
-
-local isHitting = false
-local Toggle = FarmTab:CreateToggle({
-    Name = "Firball dummy",
-    CurrentValue = false,
-    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(Value)
-        local args = {
-            [1] = Vector3.new(-83.04418182373047, 595.0643920898438, 813.4301147460938),
-            [2] = "NewFireball"
-        }
-        
-         isHitting = Value
-        
-                if isHitting then
-                    -- Lancer une boucle non bloquante
-                    task.spawn(function()
-                        while isHitting do
-        
-        game:GetService("ReplicatedStorage").SkillsInRS.RemoteEvent:FireServer(unpack(args))
-        task.wait(0.1) -- Pause
-        end
-                    end)
-                end
-    -- The function that takes place when the toggle is pressed
-    -- The variable (Value) is a boolean on whether the toggle is true or false
-    end,
- })
 
 
  local Section = FarmTab:CreateSection("Kill Bosses")
